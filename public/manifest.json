@@ -1,0 +1,46 @@
+{
+    "name": "小红书笔记获取",
+    "version": "1.0",
+    "description": "基于Vite的chrome插件",
+    "manifest_version": 3,
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches":["https://www.xiaohongshu.com/*"],
+        "css": ["content.css"],
+        "js": ["content.js"],
+        "run_at": "document_end"
+      }
+    ],
+    "permissions": ["storage","declarativeContent","scripting","activeTab","tabs"],
+    "host_permissions":["<all_urls>"],
+    "web_accessible_resources": [
+      {
+        "resources": [ "/images/app.png" ],
+        "matches": ["<all_urls>"]
+      },
+      {
+        "resources": [ "insert.js" ],
+        "matches": ["https://www.xiaohongshu.com/*"]
+      }
+    ],
+    "action": {
+      "default_popup": "index.html",
+      "default_icon": {
+        "16": "/images/app.png",
+        "32": "/images/app.png",
+        "48": "/images/app.png",
+        "128": "/images/app.png"
+      },
+      "default_title": "获取当前笔记数据"
+    },
+    "icons": {
+      "16": "/images/app.png",
+      "32": "/images/app.png",
+      "48": "/images/app.png",
+      "128": "/images/app.png"
+    }
+  }
+  

@@ -1,0 +1,30 @@
+{
+  "name": "redbook-getdata",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite -c vite.popup.config.js",
+    "build": "vite build -c vite.popup.config.js && vite build -c vite.content.config.js && vite build -c vite.background.config.js && node build.js",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview -c vite.popup.config.js",
+    "build:dev": "APP_ENV=development vite --config build/vite.config.js build --watch"
+  },
+  "dependencies": {
+    "antd": "^5.8.3",
+    "axios": "^1.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.0.3",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "stylus": "^0.59.0",
+    "vite": "^4.4.5"
+  }
+}
